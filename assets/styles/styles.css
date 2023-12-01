@@ -1,0 +1,367 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@400;700&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Dosis', sans-serif;
+    background-color: #E0F4FF;
+    margin: 0;
+}
+
+header {
+    background-color: #F1FCFD;
+    font-size: 1rem;
+    color: #4D6DE3;
+    box-shadow: 0 6px #87C4FF;
+    border-bottom-right-radius: 16px;
+    border-bottom-left-radius: 16px;
+    top: 0;
+    position: sticky;
+}
+
+.navbar {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem;
+    max-width: 1450px;
+    margin: auto;
+    padding: 0.25rem;
+}
+
+.navbar nav {
+    margin-left: auto;
+}
+
+.navbar a {
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-decoration: none;
+    color: #4D6DE3;
+}
+
+.navbar a:hover {
+    color: #39A7FF;
+}
+
+.navbar ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1rem;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.logo {
+    width: 70px;
+}
+
+.title span {
+    color: #87C4FF;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    gap: 2rem;
+}
+
+.container {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 20px;
+    box-shadow: 4px 4px #4D6DE3;
+    background-color: #F1FCFD;
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #4D6DE3;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 0.25rem;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #4D6DE3;
+}
+
+input[type="text"], input[type="number"] {
+    width: 512px;
+    margin-bottom: 2rem;
+    padding: 0.5rem;
+    border-radius: 16px;
+    border: 1px solid #87C4FF;
+    outline: none;
+    font-family: 'Dosis', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #393737;
+}
+
+.btn-submit {
+    font-family: 'Dosis', sans-serif;
+    background-color: #F1FCFD;
+    color: #4D6DE3;
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+    border: 2px solid #4D6DE3;
+    border-radius: 16px;
+}
+
+.btn-submit:hover {
+    cursor: pointer;
+    background-color: #4D6DE3;
+    color: #E0F4FF;
+}
+
+#addBookToast {
+    visibility: hidden;
+    min-width: 350px;
+    background-color: #F4D160;
+    color: #4D6DE3;
+    font-weight: 700;
+    text-align: center;
+    border-radius: 16px;
+    padding: 1rem;
+    position: fixed;
+    left: 15%;
+    bottom: 30px;
+}
+
+#addBookToast.show {
+    visibility: visible;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+#completeBookToast {
+    visibility: hidden;
+    min-width: 350px;
+    background-color: #35A29F;
+    color: #F1FCFD;
+    font-weight: 700;
+    text-align: center;
+    border-radius: 16px;
+    padding: 1rem;
+    position: fixed;
+    left: 15%;
+    bottom: 30px;
+}
+
+#completeBookToast.show {
+    visibility: visible;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+#deleteBookToast {
+    visibility: hidden;
+    min-width: 350px;
+    background-color: #CA4E79;
+    color: #F1FCFD;
+    font-weight: 700;
+    text-align: center;
+    border-radius: 16px;
+    padding: 1rem;
+    position: fixed;
+    left: 15%;
+    bottom: 30px;
+}
+
+#deleteBookToast.show {
+    visibility: visible;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+}
+
+.book-not-found {
+    background-color: #FFEED9;
+    color: #CA4E79;
+    font-weight: 700;
+    text-align: center;
+    border-radius: 16px;
+    padding: 1rem;
+    box-shadow: 4px 4px #87C4FF;
+}
+
+.book-info {
+    width: 450px;
+    color: #F1FCFD;
+    background-color: #4D6DE3;
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 16px;
+    box-shadow: 4px 4px #87C4FF;
+}
+
+.book-info h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    background-color: #87C4FF;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 16px;
+}
+
+.book-info p {
+    font-size: 1.25rem;
+    font-weight: 400;
+}
+
+.bookInfoCompleted {
+    text-align: center;
+    font-weight: 700;
+    color: #F1FCFD;
+    background-color: #35A29F;
+    border-radius: 16px;
+    box-shadow: 4px 4px #87C4FF;
+    padding: 1rem;
+}
+
+.bookInfoNotCompleted {
+    text-align: center;
+    font-weight: 700;
+    color: #393737;
+    background-color: #F4D160;
+    border-radius: 16px;
+    box-shadow: 4px 4px #87C4FF;
+    padding: 1rem;
+}
+
+.completed {
+    color: #35A29F;
+}
+
+.notCompleted {
+    color: #F4D160;
+}
+
+.list-title {
+    color: #4D6DE3;
+    text-align: center;
+}
+
+.list-container {
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 16px;
+    box-shadow: 0 6px #87C4FF;
+    background-color: #F1FCFD;
+}
+
+.item {
+    display: flex;
+    flex-direction: column;
+    width: 450px;
+    padding: 1rem;
+    margin: 1rem;
+    border-radius: 16px;
+    background-color: #4D6DE3;
+    box-shadow: 4px 4px #87C4FF;
+    font-size: 1rem;
+}
+
+.inner h2 {
+    color: #FFEED9;
+    background-color: #87C4FF;
+    border-radius: 16px;
+    padding: 0.5em;
+}
+
+.inner p {
+    padding: 0.5em;
+    background-color: #FFEED9;
+    border-radius: 16px;
+    color: #393737;
+}
+
+button {
+    margin-bottom: 1rem;
+    cursor: pointer;
+}
+
+.check-button {
+    font-family: 'Dosis', sans-serif;
+    font-size: 1rem;
+    color: #E0F4FF;
+    background-color: #35A29F;
+    border: none;
+    border-radius: 16px;
+    box-shadow: 2px 2px #E0F4FF;
+    padding: 0.75em;
+    text-align: center;
+}
+
+.trash-button {
+    font-family: 'Dosis', sans-serif;
+    font-size: 1rem;
+    color: #E0F4FF;
+    background-color: #CA4E79;
+    border: none;
+    border-radius: 16px;
+    box-shadow: 2px 2px #E0F4FF;
+    padding: 0.75em;
+    text-align: center;
+}
+
+.undo-button {
+    font-family: 'Dosis', sans-serif;
+    font-size: 1rem;
+    color: #393737;
+    background-color: #F4D160;
+    border: none;
+    border-radius: 16px;
+    box-shadow: 2px 2px #E0F4FF;
+    padding: 0.75em;
+    text-align: center;
+}
+
+p.status {
+    text-align: center;
+    font-weight: 700;
+}

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyBookshelf</title>
+    <link rel="stylesheet" href="assets/styles/styles.css">
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <img class="logo" src="assets/images/logo.png" alt="MyBookshelf">
+            <h1 class="title"><span>My</span>Bookshelf</h1>
+            <nav>
+                <ul>
+                    <li><a href="#home">HOME</a></li>
+                    <li><a href="#book-list">BOOK</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="home">
+        <section class="content">
+            <div class="container">
+                <h2 class="subtitle">Add Book</h2>
+                <form action="#" class="form" id="input-form">
+                    <div class="form-group">
+                        <label for="title">Title</label>
+                        <input type="text" id="title" name="title" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="author">Author</label>
+                        <input type="text" id="author" name="author" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="year">Year</label>
+                        <input type="number" id="year" name="year" required>
+                    </div>
+
+                    <input type="submit" value="SUBMIT" name="Submit" class="btn-submit">
+
+                    <div id="addBookToast">
+                        Book Added to List!
+                        Don't Forget to Complete it...
+                    </div>
+                </form>
+            </div>
+
+            <div class="container">
+                <h2 class="subtitle find-book">Find Book</h2>
+                <div class="form-group">
+                    <label for="search-book"></label>
+                    <input type="text" id="search-book" name="search-book">
+                </div>
+                <div class="list-item" id="find-book">
+
+                </div>
+            </div>
+        </section>
+
+        <div class="list-container">
+            <h1 class="list-title">Book List</h1>
+        </div>
+
+        <section class="content" id="book-list">
+            <div class="container">
+                <h2 class="subtitle completed">Completed</h2>
+                <div class="list-item" id="completedBook">
+
+                </div>
+            </div>
+            <div class="container">
+                <h2 class="subtitle notCompleted">Not Completed</h2>
+                <div class="list-item" id="notCompletedBook">
+                    
+                </div>
+            </div>
+        </section>
+
+        <script src="assets/script/script.js"></script>
+    </main>
+</body>
+</html>
