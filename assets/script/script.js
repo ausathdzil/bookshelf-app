@@ -1,9 +1,9 @@
 const books = [];
 const RENDER_EVENT = "render-book";
 
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => {
     const submitBook = document.getElementById("input-form");
-    submitBook.addEventListener("submit", function (event) {
+    submitBook.addEventListener("submit", (event) => {
         event.preventDefault();
         showAddBookToast();
         addBook();
@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
 function showAddBookToast() {
     const toast = document.getElementById("addBookToast");
     toast.className = "show";
-    setTimeout(function () {
+    setTimeout(() => {
         toast.className = toast.className.replace("show", "");
     }, 3000);
 
@@ -50,7 +50,7 @@ function generateBookObject(id, title, author, year, isComplete) {
     }
 }
 
-document.addEventListener(RENDER_EVENT, function () {
+document.addEventListener(RENDER_EVENT, () => {
     const notCompletedList = document.getElementById("notCompletedBook");
     notCompletedList.innerHTML = "";
 
@@ -91,7 +91,7 @@ function makeBook(bookObject) {
         undoButton.classList.add("undo-button");
         undoButton.innerHTML = "UNDO";
 
-        undoButton.addEventListener("click", function () {
+        undoButton.addEventListener("click", () => {
             undoBookFromCompleted(bookObject.id);
         });
 
@@ -99,7 +99,7 @@ function makeBook(bookObject) {
         trashButton.classList.add("trash-button");
         trashButton.innerHTML = "DELETE";
 
-        trashButton.addEventListener("click", function () {
+        trashButton.addEventListener("click", () => {
             removeBookFromCompleted(bookObject.id);
         });
 
@@ -109,7 +109,7 @@ function makeBook(bookObject) {
         checkButton.classList.add("check-button");
         checkButton.innerHTML = "COMPLETE";
 
-        checkButton.addEventListener("click", function () {
+        checkButton.addEventListener("click", () => {
             addBookToCompleted(bookObject.id);
         });
 
@@ -117,7 +117,7 @@ function makeBook(bookObject) {
         trashButton.classList.add("trash-button");
         trashButton.innerHTML = "DELETE";
 
-        trashButton.addEventListener("click", function () {
+        trashButton.addEventListener("click", () => {
             removeBookFromCompleted(bookObject.id);
         });
 
@@ -129,7 +129,7 @@ function makeBook(bookObject) {
     return container;
 }
 
-function addBookToCompleted (bookId) {
+function addBookToCompleted(bookId) {
     const bookTarget = findBook(bookId);
 
     if (bookTarget == null) {
@@ -141,7 +141,7 @@ function addBookToCompleted (bookId) {
     saveData();
 }
 
-function findBook (bookId) {
+function findBook(bookId) {
     for (const bookItem of books) {
         if (bookItem.id === bookId) {
             return bookItem;
@@ -151,7 +151,7 @@ function findBook (bookId) {
     return null;
 }
 
-function removeBookFromCompleted (bookId) {
+function removeBookFromCompleted(bookId) {
     const bookTarget = findBookIndex(bookId);
 
     if (bookTarget === -1) {
@@ -163,7 +163,7 @@ function removeBookFromCompleted (bookId) {
     saveData();
 }
 
-function undoBookFromCompleted (bookId) {
+function undoBookFromCompleted(bookId) {
     const bookTarget = findBook(bookId);
 
     if (bookTarget == null) {
@@ -204,7 +204,7 @@ function isStorageExist() {
     return true;
 }
 
-document.addEventListener(SAVED_EVENT, function () {
+document.addEventListener(SAVED_EVENT, () => {
     console.log(localStorage.getItem(STORAGE_KEY));
 });
 
@@ -221,7 +221,7 @@ function loadDataFromStorage() {
     document.dispatchEvent(new Event(RENDER_EVENT));
 }
 
-document.getElementById("search-book").addEventListener("keyup", function () {
+document.getElementById("search-book").addEventListener("keyup", () => {
     searchBook();
 });
 
