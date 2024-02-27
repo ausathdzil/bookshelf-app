@@ -1,6 +1,3 @@
-const books = [];
-const RENDER_EVENT = "render-book";
-
 document.addEventListener("DOMContentLoaded", () => {
     const submitBook = document.getElementById("input-form");
     submitBook.addEventListener("submit", (event) => {
@@ -20,8 +17,10 @@ function showAddBookToast() {
     setTimeout(() => {
         toast.className = toast.className.replace("show", "");
     }, 3000);
-
 }
+
+const books = [];
+const RENDER_EVENT = "render-book";
 
 function addBook() {
     const bookTitle = document.getElementById("title").value;
@@ -235,18 +234,22 @@ function displayBookInfo(bookItem) {
 
     const statusElement = document.createElement("p");
     statusElement.textContent = `${bookItem.isComplete ? 'COMPLETED' : 'NOT COMPLETED'}`;
+
     if (bookItem.isComplete) {
         statusElement.classList.add("bookInfoCompleted");
     } else {
         statusElement.classList.add("bookInfoNotCompleted");
     }
+
     bookInfoElement.appendChild(statusElement);
 
     return bookInfoElement;
 }
+
 function searchBook() {
     const searchedBook = [];
     const searchBookTitle = document.getElementById("search-book").value;
+
     for (const bookItem of books) {
         if (bookItem.title.toLowerCase().includes(searchBookTitle.toLowerCase())) {
             searchedBook.push(bookItem);
@@ -255,6 +258,7 @@ function searchBook() {
 
     const findBookContainer = document.getElementById("find-book");
     findBookContainer.innerHTML = "";
+    
     for (const bookItem of searchedBook) {
         const bookInfoElement = displayBookInfo(bookItem);
         findBookContainer.append(bookInfoElement);
