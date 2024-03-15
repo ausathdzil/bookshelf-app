@@ -18,12 +18,11 @@ header {
   border-bottom-right-radius: 16px;
   border-bottom-left-radius: 16px;
   top: 0;
-  position: sticky;
 }
 
 .navbar {
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   gap: 1rem;
   max-width: 1450px;
@@ -394,4 +393,50 @@ button {
 p.status {
   text-align: center;
   font-weight: 700;
+}
+
+.check-button:hover,
+.undo-button:hover,
+.trash-button:hover {
+  filter: brightness(0.8);
+}
+
+@media screen and (max-width: 768px) {
+  .content {
+    flex-direction: column;
+  }
+
+  .container,
+  .book-info,
+  .list-container {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .content {
+    flex-direction: column;
+    padding: 10px; 
+  }
+
+  .container,
+  .book-info,
+  .list-container {
+    width: 100%; 
+    padding: 10px; 
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .content {
+    flex-direction: column;
+    padding: 5px; 
+  }
+
+  .container,
+  .book-info,
+  .list-container {
+    width: 100%; 
+    padding: 5px; 
+  }
 }
